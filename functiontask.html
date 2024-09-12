@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+    <style>
+      #msg {
+        display: none;
+      }
+      button {
+        padding: 8px;
+        border-radius: 50px 25px;
+        background-color: brown;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: bisque;
+        color: black;
+        padding: 10px 10px;
+      }
+      h1 {
+        text-decoration: underline;
+        text-align: center;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This button will show a message</h1>
+    <div id="msg">Hello guys, my name is Adesewa, i am a student</div>
+    <br />
+    <button onclick="showMessage()">show Message</button>
+    <script>
+      //function declaration
+      function showMessage() {
+        let msg = document.getElementById("msg");
+        msg.style.display = "block";
+        msg.style.backgroundColor = "pink";
+        msg.style.padding = "10px";
+        msg.style.borderRadius = "10px";
+      }
+
+      // rest parameters this is used when you are expecting indefinite number of arguments
+      //checking type of prices
+      function calculateTotal(...prices) {
+        console.log( typeof(prices), prices)
+        return prices.reduce((sum, prices) => sum + prices, 0);
+      }
+      console.log(calculateTotal(10, 20, 30, 40))
+      
+
+      //function inside a function
+      function discount(discountRate) {
+        return function (price) {
+          return price * (1 - discountRate / 100);
+        };
+      }
+
+      const assignedDiscount = discount(0.5);
+      let finalizedDiscount = assignedDiscount(100);
+      console.log(finalizedDiscount);
+
+      //anonymous function/ callback In simple terms, a callback in JavaScript is like giving someone a task to do, and then telling them, "When you're done with that, let me know by doing this next thing."
+      setTimeout(function () {
+        console.log(alert("Time's Up!"));
+      }, 5000);
+
+      //arrow function
+      const double = (x) => x * 2;
+      console.log(double(5));
+
+      // function with parameters
+      function greetUser(username) {
+        console.log(`Hello, ${username}!`);
+      }
+      greetUser("little_misssoft");
+
+      //default parameters
+      function aboutMe(name = "sewa", age = 12) {
+        console.log(`About ${name}! who is ${age}`);
+      }
+      aboutMe();
+    </script>
+  </body>
+</html>

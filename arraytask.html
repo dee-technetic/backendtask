@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Array</title>
+  </head>
+
+  <body>
+    <h1>Understanding arrays</h1>
+    <div id="output"></div>
+
+    <script>
+      let months = [
+        "January",
+        "Feburary",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      function displayMonths() {
+        for (let m = 0; m < months.length; m++) {
+          document.write(`<p>month ${m + 1} is ${months[m]}</p>`);
+        }
+      }
+      //displayMonths();
+
+      // array Task
+      document.write("<h3>No8</h3>");
+      let scores = [45, 100, 12, 67, 88];
+      scores.sort((a, b) => a - b);
+      for (let k = 0; k < scores.length; k++) {
+        document.write(`<ul><li>${scores[k]}</li></ul>`);
+      }
+
+      document.write("<h3>No9</h3>");
+      let names = ["Zara", "Alex", "John", "Becky"];
+      names.sort();
+      for (let k = 0; k < names.length; k++) {
+        document.write(`<ul><li>${names[k]}</li></ul>`);
+      }
+
+      document.write("<h3>No10</h3>");
+      function addAndRemove() {
+        let people = ["Zara", "Alex", "John", "Becky"];
+        let person = "kayode";
+        people.shift();
+        people.push(person);
+        for (let i = 0; i < people.length; i++) {
+          document.write(`<ul><li>${people[i]}</li></ul>`);
+        }
+      }
+      addAndRemove();
+
+      document.write("<h3>No11 (difficult)</h3>");
+      function removeDuplicates() {
+        let fruits = [
+          "avacado",
+          "apple",
+          "watermelon",
+          "pineapple",
+          "orange",
+          "avacado",
+        ];
+        fruits.sort();
+        fruits.pop();
+        for (let f = 0; f < fruits.length; f++) {
+          document.write(`<ul><li>${fruits[f]}</li></ul>`);
+        }
+      }
+      removeDuplicates();
+
+      document.write("<h3>No12 </h3>");
+      let array = [1, 2, 3, 4, 5];
+      function reversedArray() {
+        let reverseArray = [];
+        while (array.length > 0) {
+          newArray = array.pop();
+          reverseArray.push(newArray);
+        }
+        return reverseArray;
+      }
+      presentArray = reversedArray(array);
+      for (let f = 0; f < presentArray.length; f++) {
+        document.write(`<ul><li>${presentArray[f]}</li></ul>`);
+      }
+
+      document.write("<h3>No13</h3>");
+      function shiftAndSort() {
+        let data = [3, 5, 2, 8, 1];
+        data.shift();
+        data.sort((b, a) => a - b);
+        for (let s = 0; s < data.length; s++) {
+          document.write(`<ul><li>${data[s]}</li></ul>`);
+        }
+      }
+      shiftAndSort();
+
+      document.write("<h3>No14</h3>");
+      function advancedSort() {
+        let datas = [1, 30, 4, 21, 100000];
+        datas.shift();
+        datas.sort((a, b) => a - b);
+        for (let s = 0; s < datas.length; s++) {
+          document.write(`<ul><li>${datas[s]}</li></ul>`);
+        }
+      }
+      advancedSort();
+
+      document.write("<h3>No15(difficult)</h3>");
+      let num = [2, 4, 6, 8, 10];
+      function rotateLeft() {
+        let no = [];
+        while (num.length > 0) {
+          newNo = num.shift();
+          no.push(newNo);
+        }
+        return no;
+      }
+      // presentNo = rotateleft(num)
+      // for (let n = 0; n < presentNo.length; n++) {
+      //   document.write(`<ul><li>${presentNo[n]}</li></ul>`);
+      // }
+
+      document.write("<h3>No16</h3>");
+      function caseInsensitiveSort() {
+        let strings = ["Zara", "alex", "john", "Becky"];
+        strings.sort();
+        for (let s = 0; s < strings.length; s++) {
+          document.write(`<ul><li>${strings[s]}</li></ul>`);
+        }
+      }
+      caseInsensitiveSort();
+
+      document.write("<h3>No16</h3>");
+      function numbers() {
+        let num = [1, 30, 4, 21, 100000];
+        num.pop();
+        num.unshift("0");
+        num.sort((b, a) => a - b);
+        for (let n = 0; n < num.length; n++) {
+          document.write(`<ul><li>${num[n]}</li></ul>`);
+        }
+      }
+      numbers();
+
+      // function bigInt() {
+      //   let number = 100000000;
+      //   let area = number * 2;
+      //  document.write(`<p>${area}</p>`)
+      // }
+      // bigInt()
+
+      // let symbol1 = Symbol('description');
+      // let symbol2 = Symbol('description');
+      // console.log(symbol1 === symbol2);
+
+    </script>
+  </body>
+</html>

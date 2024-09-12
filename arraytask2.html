@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>week3 array task</title>
+  </head>
+  <body>
+    <h1>UNDERSTANDING ARRAY METHODS</h1>
+    <script>
+      // 1 Array.(map) method
+      let numbers = [10, 20, 30, 40, 30];
+      let multiple = numbers.map((number) => number * 5);
+      document.write("<h3>Question 1</h3>");
+      document.write(`original numbers<ul><li>${numbers}</li></ul>`);
+      document.write(`Numbers multiplied by 5<ul><li>${multiple}</li></ul>`);
+
+      // 2. Array.prototype.map()
+      function getNumberOfStrings() {
+        let fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+        let count = fruits.map((item) => item.length);
+        document.write("<h3>Question 2</h3>");
+        document.write(`length of each fruit<ul><li>${count}</li></ul>`);
+      }
+      getNumberOfStrings();
+
+      // 3 Array.prototype.filter()
+      let numbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+      let evenNumbers = numbers1.filter((number) => number % 2 === 0);
+      document.write("<h3>Question 3</h3>");
+      document.write(`Even numbers <ul><li>${evenNumbers}</li></ul>`);
+
+      // 4 Array.prototype.filter()
+      function filterWords() {
+        let animals = [
+          "bat",
+          "gorilla",
+          "cat",
+          "baboon",
+          "monkey",
+          "dog",
+          "goat",
+        ];
+        let filtered = animals.filter((animal) => animal.length > 5);
+        document.write("<h3>Question 4</h3>");
+        document.write(
+          `animals with numbers greater than 5 <ul><li>${filtered}</li></ul> `
+        );
+      }
+      filterWords();
+
+      // 5 Array.prototype.reduce()
+      function sumAll() {
+        let numbers = [10, 20, 30, 40, 50];
+        let calculated = numbers.reduce((acc, sum) => acc + sum, 0);
+        document.write("<h3>Question 5</h3>");
+        document.write(`Sum of numbers <ul><li>${calculated}</li></ul> `);
+      }
+      sumAll();
+
+      // 6 Array.prototype.reduce()
+      function multiplyAll() {
+        let numbers = [1, 2, 3, 4, 5];
+        let calculated = numbers.reduce((acc, sum) => acc * sum, 1);
+        document.write("<h3>Question 6</h3>");
+        document.write(
+          `multiplication of numbers <ul><li>${calculated}</li></ul> `
+        );
+      }
+      multiplyAll();
+
+      // 7 Array.prototype.find()
+      let students = [
+        { name: "kayode", grade: 10 },
+        { name: "dave_ot", grade: 20 },
+        { name: "dave_nt", grade: 30 },
+        { name: "eme", grade: 90 },
+      ];
+      let result = students.find((student) => student.grade > 80);
+      document.write("<h3>Question 7</h3>");
+      document.write(`name of student <ul><li>${result.name}</li></ul> `);
+
+      // 8 Array.prototype.find()
+      function findNumberGreaterThan100() {
+        let numbers = [180, 20, 35, 48, 59];
+        let foundNumber = numbers.find((number) => number > 100);
+        document.write("<h3>Question 8</h3>");
+        document.write(
+          `number greater than 100 <ul><li>${foundNumber}</li></ul> `
+        );
+      }
+      findNumberGreaterThan100();
+
+      // 9 Array.prototype.findIndex()
+      function findNumberDivisibleBy3() {
+        let numbers = [180, 20, 35, 48, 59];
+        let foundNumber = numbers.findIndex((number) => number % 3 === 0);
+        document.write("<h3>Question 9</h3>");
+        document.write(
+          `number divisible by 3 <ul><li> index ${foundNumber}</li></ul> `
+        );
+      }
+      findNumberDivisibleBy3();
+
+      // 10 Array.prototype.findIndex()
+      let animals = ["bat", "gorilla", "cat", "Snake", "monkey", "dog", "goat"];
+      result = animals.findIndex((word) => word.startsWith("S"));
+      document.write("<h3>Question 10</h3>");
+      document.write(
+        `animal that starts with uppercase S <ul><li> index ${result}</li></ul> `
+      );
+
+      // 11  Array prototype.some()
+      function checkNumber() {
+        let numbers = [180, 20, 35, 48, 59];
+        let foundNumber = numbers.some((number) => number > 50);
+        document.write("<h3>Question 11</h3>");
+        document.write(
+          `number greater than 50 <ul><li>${foundNumber}</li></ul> `
+        );
+      }
+      checkNumber();
+
+      // 12 Array prototype.sojme()
+      function checkString() {
+        let programmingLanguages = ["Java", "Javascript", "PHP", "Ruby", "C#"];
+        let exists = programmingLanguages.some(
+          (language) => language === "Javascript"
+        );
+        document.write("<h3>Question 12</h3>");
+        document.write(`Does javascript exist? <ul><li>${exists}</li></ul> `);
+      }
+      checkString();
+
+      // 13 Array prototype.every()
+      function checkPositiveNumber() {
+        let numbers = [-32, 4, 26, -3, 30];
+        let isPositive = numbers.every((number) => number > 0);
+        document.write("<h3>Question 13</h3>");
+        document.write(
+          `number greater than 0 <ul><li>${isPositive}</li></ul> `
+        );
+      }
+      checkPositiveNumber();
+
+      // 14 Array prototype.every()
+      let ages = [12, 34, 56, 18];
+      let confirmation = ages.every((age) => age > 18);
+      document.write("<h3>Question 14</h3>");
+      document.write(`age greater than 18 <ul><li>${confirmation}</li></ul> `);
+
+      // 15 Array prototype.sort()
+      function sortNumbers() {
+        let numbers = [5, 3, 1, 7, 9];
+        numbers.sort((b, a) => a - b);
+        document.write("<h3>Question 15</h3>");
+        document.write(
+          `numbers in descending order <ul><li>${numbers}</li></ul> `
+        );
+      }
+      sortNumbers();
+
+      // 16 Array prototype.sortStrings
+      let animalNames = [
+        "bat",
+        "gorilla",
+        "cat",
+        "Snake",
+        "monkey",
+        "dog",
+        "goat",
+      ];
+      let sortedAnimalNames = animalNames.sort();
+      document.write("<h3>Question 16</h3>");
+      document.write(
+        `names of animals in alphabetical order <ul><li>${sortedAnimalNames}</li></ul> `
+      );
+
+      // Array prototype.splice()
+    //   let fruits = ["apple", "banana", "cherry", "date", "elderberry"];
+    //   fruits.splice(2, 1, "grape");
+    //   document.write("<h3>Question 17</h3>");
+    //   document.write(`fruits after splice <ul><li>${fruits}</li></ul> `);
+
+    // 17 array prototype.concat()
+    let num1 = [1,2,3];
+    let num2 = [4,5,6];
+    let mergedArray = num1.concat(num2);
+    document.write("<h3>Question 17</h3>");
+     document.write(`number after concat <ul><li>${mergedArray}</li></ul> `);
+
+     // 18 array prototype.concat()
+     let animals1 = ["bat", "gorilla", "cat"];
+     let animals2 = ["snake", "monkey", "dog", "goat"];
+     let mergedAnimals = animals1.concat(animals2);
+     document.write("<h3>Question 18</h3>");
+     document.write(`animals after concat <ul><li>${mergedAnimals}</li></ul> `);
+
+     // 19 array prototype.includes()
+     function checkForNumber10() {
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let exists = numbers.includes(10);
+        document.write("<h3>Question 19</h3>");
+        document.write(`number 10 exists? <ul><li>${exists}</li></ul> `);
+     }
+     checkForNumber10();
+
+     // 20 array prototype.include()
+     function checkForApple(){
+        let fruits = [ "berry", "orange","grapes","apple"]
+        check = fruits.includes("apple");
+        document.write("<h3>Question 20</h3>");
+        document.write(`apple exists? <ul><li>${check}</li></ul> `);
+     }
+     checkForApple()
+
+    </script>
+  </body>
+</html>
